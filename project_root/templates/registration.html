@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <form class="login-form" method="post" action="{{ url_for('registration') }}">
+                <span class="login-logo">
+                    <i class="fa fa-user-plus"></i>
+                </span>
+                <span class="form-title">Реєстрація на HealthCheck</span>
+                <div class="form-group">
+                    <label>Ім‘я</label>
+                    <input type="text" name="first_name" class="form-control" placeholder="Ваше ім‘я" required />
+                </div>
+                <div class="form-group">
+                    <label>Прізвище</label>
+                    <input type="text" name="last_name" class="form-control" placeholder="Ваше прізвище" required />
+                </div>
+                <div class="form-group">
+                    <label>Пошта</label>
+                    <input type="email" name="email" class="form-control" placeholder="ivan.gonchar@gmail.com" required />
+                </div>
+                <div class="form-group">
+                    <label>Пароль</label>
+                    <input type="password" name="password" class="form-control" placeholder="Введіть пароль" required>
+                </div>
+                <div class="form-group">
+                    <label>Дата народження</label>
+                    <input type="date" name="dob" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label>Місто проживання</label>
+                    <input type="text" name="city" class="form-control" list="cities" placeholder="Ваше місто" required />
+                    <datalist id="cities">
+                        <option>Київ</option>
+                        <option>Львів</option>
+                        <option>Житомир</option>
+                        <option>Чернігів</option>
+                        <option>Суми</option>
+                        <option>Тернопіль</option>
+                        <option>Дніпро</option>
+                        <option>Харків</option>
+                        <option>Івано-Франківськ</option>
+                        <option>Ужгород</option>
+                        <option>Чернівці</option>
+                        <option>Черкаси</option>
+                        <option>Одеса</option>
+                        <option>Херсон</option>
+                        <option>Рівне</option>
+                        <option>Миколаїв</option>
+                        <!-- Add more city options as needed -->
+                    </datalist>
+                </div>
+                <!-- Add more registration fields as needed -->
+
+                <div class="form-group">
+                    <input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" value="Зареєструватися">
+                </div>
+                <p>Вже маєте обліковий запис? <a href="{{ url_for('login') }}">Увійдіть тут</a>.</p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

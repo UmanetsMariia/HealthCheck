@@ -1,0 +1,145 @@
+/* Add your CSS styles here */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+   color: #000000;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white; /* Set the header background to white */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow to the header */
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: black; /* Set logo text color to black or any other color as needed */
+}
+.nav {
+  display: flex;
+  list-style: none;
+  padding-left: 0; /* Remove default padding */
+  margin-left: -10px; /* Move navigation to the left */
+}
+.nav li {
+  padding: 10px 20px; /* Increased padding for larger buttons */
+  background: #ffffff; /* Optional: if you want the individual buttons to have a white background */
+  margin-right: 10px; /* Add space between menu items */
+  border-radius: 5px; /* Optional: if you want rounded corners for menu items */
+}
+.nav a {
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.3s, color 0.3s ease;
+  font-size: 20px; /* Increased font size for navigation items */
+  display: block; /* Make the link fill the entire list item area for larger click targets */
+}
+.nav a:hover,
+.nav .active {
+  color: green; /* Green color for active state */
+}
+.logout {
+  color: black;
+  text-decoration: none;
+  font-size: 20px; /* Increased font size for the logout link */
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 300px;
+  align-items: center; /* This centers the children horizontally */
+}
+h1 {
+  font-size: 32px; /* Increased font size for the main heading */
+}
+.get-started {
+  text-decoration: none;
+  padding: 15px 30px; /* Bigger button */
+  margin-top: 20px;
+  background-color: black; /* Black background for the button */
+  color: white; /* White text for the button */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50px; /* Oval shaped button */
+  font-size: 18px; /* Larger button text */
+}
+.get-started:hover {
+  background-color: green; /* Green background on hover */
+}
+.image-container {
+  flex: 1;
+  text-align: right; /* Align the image to the right */
+  align-self: flex-start; /* Move the image to the top of the container */
+}
+
+.image-container img {
+  max-width: 30%; /* Adjust the width to make the image smaller */
+  height: auto; /* Maintain the aspect ratio of the image */
+  margin-top: 40px;/* Move the image higher with a negative margin if needed */
+  margin-left: -100px;
+}
+
+.health-check-text {
+  /* Positioning styles for the text */
+}
+
+.get-started-button {
+  text-decoration: none;
+  margin-top: 20px; /* Adjust value as needed to move button lower */
+  align-self: center; /* This centers the button horizontally within the flex container */
+}
+
+.content {
+  text-align: center; /* Centers content horizontally */
+  margin-top: 60px; /* Adds space below the menu bar */
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 30px; /* Adjust as needed */
+}
+
+.test-options-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around; /* Adjust as needed to align items */
+  font-size: 1.4em; /* Increase text size */
+}
+
+.test-link {
+  border-radius: 50px;
+  background-color: black;
+  color: white;
+  padding: 10px; /* Adds space around the text */
+  text-decoration: none;
+  /* Add more styling as needed */
+}
+
+.test-link:hover {
+  background-color: green; /* Green background on hover */
+}
+.upload-container {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px; /* Adjust this value to position the form below the menu bar */
+}
+
+.upload-form {
+  margin-top: 50px; /* Adjust this value as needed to move the form lower */
+}
+
+.message-container {
+    text-align: center; /* Center the message on the page */
+    margin-top: 40px; /* Space above the message */
+}
+
+.message {
+    color: #ff0000; /* Example: red text for visibility */
+    font-size: 1.2em; /* Larger text for emphasis */
+    /* Add more styling as needed */
+}
