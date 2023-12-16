@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <!-- Add any additional styles or scripts if needed -->
+
 </head>
 <body>
+
 <div class="header">
   <div class="logo">
        <a href="{{ url_for('main') }}" style="color: inherit; text-decoration: none;">HealthCheck</a>
@@ -27,8 +28,10 @@
 </div>
 
     <h1>Diabetes Diagnostics</h1>
+
 <div class="wrapper">
     <div class="container">
+        <h2 class="form-title">Enter your blood test result</h2>
         <form method="post" action="/diabetes" class="diabetes-form">
         <!-- Input fields for the diabetes diagnostic test -->
             <div class="form-group">
@@ -99,13 +102,32 @@
     </div>
 </div>
 
-    <!-- Display the message from the server -->
+
 <div class="message-container">
     {% if message %}
         <p class="message">{{ message }}</p>
     {% endif %}
 </div>
-
-    <p><a href="{{ url_for('logout') }}">Logout</a></p>
-</body>
-</html>
+<div class="endo-list">
+    {% if endocrinologists %}
+        <h2>Recommended Endocrinologists:</h2>
+        <table class="centered-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Clinic</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doctor in endocrinologists %}
+                    <tr>
+                        <td>{{ doctor[0] }}</td>
+                        <td>{{ doctor[1] }}</td>
+                        <td>{{ doctor[2] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>

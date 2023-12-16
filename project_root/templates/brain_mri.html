@@ -1,4 +1,3 @@
-<!-- brain_mri_upload.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <!-- Add any additional styles or scripts if needed -->
+
 </head>
 <body>
 <div class="header">
@@ -30,7 +29,9 @@
   <h1>Upload your Brain MRI</h1>
   <form action="/brain_mri" method="POST" enctype="multipart/form-data" class="upload-form">
     <input type="file" name="mri_image" accept="image/jpeg">
-    <input type="submit" value="Submit">
+    <div class="submit-button">
+        <input type="submit" class="submit" value="Submit">
+    </div>
   </form>
 </div>
 <div class="message-container">
@@ -38,5 +39,26 @@
         <p class="message">{{ message }}</p>
     {% endif %}
 </div>
-</body>
-</html>
+<div class="neuro-list">
+    {% if neuros %}
+        <h2>Recommended Neurosurgeon:</h2>
+        <table class="centered-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Clinic</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doctor in neuros %}
+                    <tr>
+                        <td>{{ doctor[0] }}</td>
+                        <td>{{ doctor[1] }}</td>
+                        <td>{{ doctor[2] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>

@@ -29,7 +29,6 @@ def register_user(email, password, first_name, last_name, dob, city):
 
     try:
         with connection.cursor() as cursor:
-            # Example: Insert a new user into the 'users' table
             cursor.execute("""
                 INSERT INTO users (email, password, first_name, last_name, dob, city)
                 VALUES (%s, %s, %s, %s, %s, %s);
@@ -51,7 +50,6 @@ def authenticate_user(email, password):
 
     try:
         with connection.cursor() as cursor:
-            # Check if the user exists in the 'users' table
             cursor.execute("SELECT * FROM users WHERE email = %s AND password = %s;", (email, password))
             return cursor.fetchone() is not None
     except psycopg2.Error as e:
@@ -61,15 +59,7 @@ def authenticate_user(email, password):
         close_connection(connection)
 
 def get_dob(user_id):
-    """
-    Retrieves the date of birth for a given user from the database.
 
-    Parameters:
-    user_id (int): The ID of the user whose date of birth is to be retrieved.
-
-    Returns:
-    str: The date of birth of the user in 'YYYY-MM-DD' format, or None if not found.
-    """
     connection = connect_to_database()
     if not connection:
         return None
@@ -82,5 +72,45 @@ def get_dob(user_id):
     except psycopg2.Error as e:
         print(f"Error retrieving date of birth: {e}")
         return None
+    finally:
+        close_connection(connection)
+
+
+def get_endocrinologists():
+    connection = connect_to_database()
+    if not connection:
+        return []
+
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT d.name, c.name, c.city 
+                FROM doctors d
+                JOIN clinics c ON d.clinic_id = c.id
+                WHERE d.spec = 'ендокринолог';
+                """)
+            return cursor.fetchall()
+    except psycopg2.Error as e:
+        print(f"Error retrieving endocrinologists: {e}")
+        return []
+    finally:
+        close_connection(connection)
+def get_neuro():
+    connection = connect_to_database()
+    if not connection:
+        return []
+
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT d.name, c.name, c.city 
+                FROM doctors d
+                JOIN clinics c ON d.clinic_id = c.id
+                WHERE d.spec = 'нейрохірург';
+                """)
+            return cursor.fetchall()
+    except psycopg2.Error as e:
+        print(f"Error retrieving: {e}")
+        return []
     finally:
         close_connection(connection)

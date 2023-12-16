@@ -20,27 +20,27 @@ body {
         background: linear-gradient(90deg, #50a3a2 50%, #FFFFFF 50%);*/
 }
 body ::-webkit-input-placeholder {
-    /* WebKit browsers */
+
     font-family: 'Lato', sans-serif;
     color: #555555;
     font-weight: 300;
 }
 body :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
+
     font-family: 'Lato', sans-serif;
     color: #555555;
     opacity: 1;
     font-weight: 300;
 }
 body ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
+
     font-family: 'Lato', sans-serif;
     color: #555555;
     opacity: 1;
     font-weight: 300;
 }
 body :-ms-input-placeholder {
-    /* Internet Explorer 10+ */
+
     font-family: 'Lato', sans-serif;
     color: #555555;
     font-weight: 300;
@@ -59,7 +59,7 @@ body :-ms-input-placeholder {
     justify-content: center;
     align-items: center;
     padding: 5px 250px;
-    /*background-image: url('../images/cover.jpg');*/
+
 }
 .container {
     -webkit-box-shadow: 10px 0px 30px 5px rgba(0,0,0,0.27);
@@ -230,18 +230,18 @@ label {
     margin-bottom: .5rem;
     font-weight: 700;
 }
-/* Additional styles for diabetes form */
+
 .diabetes-form {
-    max-width: 500px; /* Adjust as needed */
-    margin: 0 auto; /* Centers the form */
+    max-width: 500px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #2AAA8A; /* Change color as needed */
+    background-color: #2AAA8A;
     border-radius: 10px;
 
 }
 
 .diabetes-form .form-control {
-    margin-bottom: 10px; /* Adds space below the input */
+    margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ced4da;
     border-radius: 5px;
@@ -251,20 +251,75 @@ label {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    font-size: 18px; /* Makes button text larger */
+    font-size: 18px;
     font-weight: bold;
-    margin-top: 10px; /* Adds space above the button */
+    margin-top: 10px;
 }
 
-/* Add a title style if needed */
+
 .diabetes-form .form-title {
-    font-size: 24px; /* Adjust as needed */
-    margin-bottom: 20px; /* Adds space below the title */
+    font-size: 24px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-/* Apply the .diabetes-form class to your form tag */
+
+.diabetes-title {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: #FFF;
+  font-weight: 300;
+}
+
+.form-title {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+
+}
 
 
+.centered-table th, .centered-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.centered-table th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.neuro-list h2 {
+    text-align: center;
+}
+
+.centered-table th, .centered-table td {
+    color: black;
+}
 
 
+.endo-list {
+    color: black;
+}
+
+.wrapper {
+    margin-bottom: 30px; /* Adds space below the form */
+}
+
+.message-container {
+    text-align: center;
+    margin-top: 20px; /* Space after the form */
+    margin-bottom: 20px; /* Space before the doctors list */
+}
+
+.endo-list {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.centered-table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 30px;
+}
