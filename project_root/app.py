@@ -6,8 +6,9 @@ import pandas as pd
 import numpy as np
 from flask import session
 from datetime import datetime
-
+import secrets
 app = Flask(__name__)
+app.secret_key = secrets.token_hex(16)
 app.static_folder = 'static'
 db_connection = connect_to_database()
 
@@ -96,8 +97,8 @@ def diabetes():
         probability_of_diabetes = probabilities[1] * 100
         is_diabetes = int(probability_of_diabetes >= 45)
         if is_diabetes == 1:
-            message = f"Seems like you might have diabetes. Probability: {probability_of_diabetes:.0f}%. Please check up with your doctor."
             endocrinologists = get_endocrinologists()
+            message = f"Seems like you might have diabetes. Please check up with your doctor."
             return render_template('diabetes.html', message=message, endocrinologists=endocrinologists)
         elif is_diabetes == 0:
             message = "Seems like you don't have diabetes."
